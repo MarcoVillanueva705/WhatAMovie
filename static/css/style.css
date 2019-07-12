@@ -1,0 +1,84 @@
+*{
+margin: 0px;
+padding: 0px;
+}
+.container{
+background-repeat: no-repeat;
+background-position: center center;
+background-image: url("../img/film-reel.jpg");
+background-size: cover;
+top: 0;
+bottom: 0;
+height: 100vh;
+z-index: -10;
+}
+.container-overlay{
+position: absolute;
+background-color: rgba(0,0,0,0.5);
+top: 0;
+bottom: 0;
+height: 100%;
+width: 100%;
+z-index: -5;
+}
+.header{
+width: 975px;
+height: 100px;
+vertical-align: top;
+display: inline-block;
+}
+body a{
+  font-weight: 900;
+  font-size: 100%;
+}
+body table{
+text-align: left;
+margin-top: 25px;
+font-size: x-large;
+}
+.header ul{
+vertical-align: top;
+line-height: 70px;
+font-size: x-large
+}
+.header a{
+display: inline-block;
+vertical-align: top;
+text-decoration: none;
+text-align: left;
+}
+.header h1{
+background-color: hotpink;
+display: inline-block;
+}
+.header li{
+vertical-align: top;
+list-style-type: none;
+display: inline-block;
+background-color:none;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+.left{
+  margin-left: 35px;
+  display: inline-block;
+}
+.move{
+  margin-left: 35px;
+  display: inline-block;
+}
+a:hover, a:active {
+background-color: olivedrab;
+color: mediumblue
+}
+.nav h1{
+vertical-align: top;
+display: inline-block;
+line-height: 40px;
+background-color: aquamarine;
+}
+.message{
+  color: aqua;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width,, initial-scale = 1">
+        <title>What a Movie!</title>
+        <link rel = "stylesheet" type = "text/css" href = "/../static/css/style4.css">
+    </head>
+
+    <body>
+        
+        <div class="wrapper">
+                {% with messages = get_flashed_messages() %}     
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        
+            {% for z in movie %}
+            <h1>Hello {{ session["first_name"] }}! Edit {{z['title']}}</z></h1>
+            <a href = "/logout">Logout</a>
+            
+            <div class="curtains">
+                <form action="/movie/edit/{{z['movie_id']}}" method="POST">
+                
+                    <list>
+                        <ul>
+                
+                        <li>Description: <input type="text" name="description"></li>
+                        <div class="box">
+                            <li><input type = "submit" value = "Update Movie!"></li>
+                        </div> 
+                        <li><a href="/movies"><input class="btn btn-primary" value="Cancel"></a></li>
+                        </ul>  
+                    </list>
+                </form> 
+            </div>
+            {% endfor %}
+        </div>
+    </body> 
+</html>

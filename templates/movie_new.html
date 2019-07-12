@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width,, initial-scale = 1">
+        <title>What a Movie!</title>
+        <link rel = "stylesheet" type = "text/css" href = "../static/css/style3.css">
+    </head>
+
+    <body>
+        <div class="wrapper">    
+            {% with messages = get_flashed_messages() %}     
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            
+                <h2>Hello, {{ session["first_name"] }} ! Add a movie!</h2>
+                <a href = "/logout">Logout!</a>
+        
+            <div class="desc">
+                <form action="/new_movie" method="POST">
+                
+                    <list>
+                        <ul>
+                        <li>Movie Title: <input type="text" name="title"></li>
+                        <li>Description: <input type="text" name="description"></li>
+                        <li>Year: <input type="number" name="year"></li>
+                        <div class="box">
+                            <li><input type = "submit" value = "Add Movie!"></li>
+                        </div> 
+                            <li><a href="/movies"><input class="btn btn-primary" value="Cancel"></a></li>
+                        </ul>  
+                    </list>
+                </form> 
+            </div>
+        </div>
+    </body>
+</html>

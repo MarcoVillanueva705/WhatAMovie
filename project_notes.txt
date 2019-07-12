@@ -1,0 +1,78 @@
+"SELECT users.id, users.first_name, movie.movie_id, movie.title, movie.description, movie.year, comments.discuss, comments.rating, comments.created_at, comments.updated_at FROM users JOIN movie on users.id = movie.users_id JOIN comments on users.id = comments.users_id;"
+
+  <h2>Discuss the movie!</h2>
+
+        <table>
+            {% for z in users %}
+                <tr>
+                   <td>{{z['discuss']}}</td>
+                   <td>{{z['rating']}}</td>
+                   <td><form action="add_discussion/{{z['id']}}" method="POST">
+                    <input class="btn btn-link" type="submit" value="Add!" />
+                </form></td> 
+                </tr>
+            {% endfor %}
+            </table>
+
+<img class = "img-film-reel" src = "../static/img/film-reel.jpg" alt = "reel">
+            <div class = "wrapper">
+
+    <h1>Speak on it!</h1>
+                <p>Welcome, {{ session["first_name"] }}</p>
+
+                <a href = "/logout">Logout</a>
+                <a href="/movie_new">Add a movie!</a>
+        
+                <main id = "main">
+                   <section id = "section-a" class = "grid"></section> 
+                        <table>
+         
+                            <p>Cool Flicks!</p>
+                            <tr>
+                            <th>Title</th>
+                            <th>Actions</th>
+                            </tr>
+                    
+                            {% for z in info %}   
+                    
+                            <tr>     
+                            <td><a href="/discuss/{{z['movie_id']}}">{{ z['title'] }}</a></td>
+                            <td><a href="/delete/{{z['movie_id']}}">Remove</a></td>
+                            {% endfor %}
+                            </tr>
+                        </table>
+                    </section>
+                </main>     
+            </header>
+        </body>   
+</html>
+
+$('a').click(function(){
+    alert('you are now leaving the page!');
+}
+$('#hide').click(function()){
+    $('p').hide;
+})
+$('#show').click(function(){
+    $('p').show();
+})
+
+$('button').click(function(){
+    $('#myParagraph').text('see how I .text() works as a setter!');
+    })
+
+<p id='myParagraph'> This is my paragraph! </p>
+    <button> Click me to change the paragraph! </button>
+
+     $(document).ready(function(){
+                $('h1').click(function(){
+                    $('p').toggle(); 
+                })
+            });
+        </script>
+        
+    </head>
+    
+    <body>
+            <h1>AddClass</h1>
+            <p>Movie</p>

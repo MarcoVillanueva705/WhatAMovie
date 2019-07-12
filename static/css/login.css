@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    }
+.container{
+    background-repeat: no-repeat;
+    background-position: left;
+    background-image: url("../img/popcorn.jpg");
+    background-size: contain;
+    margin-right: 600px;
+}
+.container h1{
+    color: lawngreen;
+}
+@media only screen and (min-width: 768px) {
+    .container{
+        width: 600px
+    }
+}

@@ -1,0 +1,74 @@
+*{
+margin: 0px;
+padding: 0px;
+}
+.navbar{
+    background-color: #b8b8b8;
+}
+body a{
+    font-weight: 900;
+    color: orangered;
+}
+body h1{
+    color: #531a65;
+}
+body h2{
+    color: #531a65;
+}
+body h3{
+vertical-align: top;
+display: inline-block;
+line-height: 40px;
+margin-top: 85px;
+margin-left: 775px;
+font-weight: 900;
+}
+body td{
+font-weight: 900;
+font-size: 150%;
+}
+.table{
+table-layout: fixed;
+}
+.wrapper{
+background-repeat: no-repeat;
+background-position: center center;
+background-image: url("../img/lights.jpg");
+background-size: cover;
+top: 0;
+bottom: 0;
+height: 100vh;
+z-index: -10;
+}
+.wrapper-overlay{
+position: absolute;
+background-color: rgba(0,0,0,0.5);
+top: 0;
+bottom: 0;
+height: 100%;
+width: 100%;
+z-index: -5;
+}
+.orange{
+color: orangered;
+font-weight: 900;
+font-size: 125%;
+}
+textarea{
+vertical-align: top;
+display: inline-block;
+}
+.rate{
+vertical-align: top;
+display: inline-block;
+margin-left: 90px;
+}
+.chat table{
+vertical-align: top;
+display: inline-block;
+line-height: 40px;
+margin-left: 515px;
+color: orangered;
+font-weight: 900;
+font-size: 125%;
+}

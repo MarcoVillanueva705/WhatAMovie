@@ -1,0 +1,34 @@
+*{
+margin: 0px;
+padding: 0px;
+}
+.wrapper{
+background-repeat: no-repeat;
+background-position: center center;
+background-image: url("../img/theater.jpg");
+background-size: cover;
+height: 100vh;
+}
+.wrapper h2{
+display: inline-block;
+margin-left: 660px;
+margin-top: 75px;
+}
+body a{
+font-weight: 900;
+}
+body h2{
+color: #3d0300;
+}
+.desc{
+display: inline-block;
+margin-left: 730px;
+}
+.desc ul{
+display: inline-block;
+list-style: none; 
+text-align: end; 
+}
+.box li{
+margin-right: 55px;
+}

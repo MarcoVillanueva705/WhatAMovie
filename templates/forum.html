@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width,, initial-scale = 1">
+        <title>What a Movie!</title>
+        <link rel = "stylesheet" type = "text/css" href = "../static/css/style2.css">
+    </head>
+
+    <body>
+        <div class="wrapper">  
+                {% with messages = get_flashed_messages() %}     
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        
+            <nav class = "navbar navbar-default" role = "navigation">
+                <div class = "container">
+                    <div class =  "navbar-header">
+                        <a class = "navbar-brand" href = "/movies">Home</a>
+                        <a class = "navbar-brand" href = "/logout">Logout</a>
+                    </div>
+                </div>
+            </nav>
+    
+            <table class = "table table-hover">
+                
+                <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Rating Average</th>
+                <th>Year</th>
+                </tr>
+
+                {% for z in discussion %}
+                <div class = "header"><h1>Hello, {{ session["first_name"] }}! Welcome to the {{z['title']}} forum!</h1></div>
+                <hr />
+                
+                <tr>
+                <td>{{z['title']}}</td>
+                <td>{{z['description']}}</td>
+                {% for x in numbers %}
+                <td>{{x['AVG (rating)']}}</td>
+                {% endfor %}
+                <td>{{z['year']}}</td>
+            
+                {% endfor %}
+                </tr>
+        
+            </table>
+        
+        
+                <h2>Rate the movie and post your discussion: </h2> 
+                   
+                <form action="/add_discussion/{{discussion[0]['movie_id']}}" method = "POST">
+                    <div class="text">
+                        <textarea rows="4" cols="50" textarea id = "textAreaId" name = "discuss">
+                        Enter text here...</textarea>
+                    </div>
+                
+                    <div class="rate">
+                        <select name = "rating">
+                        <option value = "0">0</option>
+                        <option value = "1">1</option>
+                        <option value = "2">2</option>
+                        <option value = "3">3</option>
+                        <option value = "4">4</option>
+                        <option value = "5">5</option>
+                        </select>
+                        <input type="submit">
+                    </div>            
+                    
+                </form>
+       
+
+                <div class="chat">
+                
+                    <table>
+
+                    <tr>
+                        <th></th>
+                        <th>What others are saying...</th>
+                        <th></th>
+                    </tr>
+                    
+                    <tr>    
+                    {% for x in comments %}
+                        <td>{{x['first_name']}}:</td>
+                        <td>{{x['discuss']}}</td>
+                        <td>{{x['rating']}} out of 5!</td>
+                    </tr>
+                    {% endfor %}
+                    </table>
+                </div>
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width,, initial-scale = 1">
+        <title>What a Movie!</title>
+        <link rel = "stylesheet" type = "text/css" href = "../static/css/style.css">
+        </head>
+        
+        <body>   
+            {% with messages = get_flashed_messages() %}     
+                {% if messages %}                            
+                    {% for message in messages %}            
+                        <p>{{message}}</p>                   
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="container">
+                <div class="container-overlay"></div>
+                <div class="header">        
+                    <h1>Welcome, {{ session["first_name"] }}!</h1>
+                        <ul>
+                            <li><a href = "/logout">Logout</a></li>
+                            <div class="left"><li><a href="/movie_new">Add a movie!</a></li></div>
+                        </ul>
+                </div>
+                     
+
+                <div class="nav">
+                    <h1>Choose from our inventory, or add your own!</h1>    
+                    
+                    <table>
+                        <tr>
+                        <th>Movie Title</th>
+                        <th>Actions</th>
+                        </tr>
+                       
+                        {% for z in info %}
+                        <tr>
+                         
+                        <td><a href="/discuss/{{z['movie_id']}}">{{ z['title'] }}</a></td> 
+                            {% if z['users_id'] == session['user_id'] %}
+                        <td><a href="/edit/movie/{{z['movie_id']}}">Edit</a></td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </table>     
+                </div>  
+            </div>           
+        </body>   
+</html>
